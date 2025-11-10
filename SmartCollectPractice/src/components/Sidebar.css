@@ -1,0 +1,11 @@
+.li{
+    border-bottom: 1px solid gray;
+    padding: 10.2px;
+}
+.list{
+    width: 165px;
+    border-right: 1px solid gray;
+}
+.list li:hover{
+  background-color: aliceblue;
+}

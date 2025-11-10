@@ -1,0 +1,174 @@
+// import React from "react";
+// import { useState } from "react";
+// import Button from "react-bootstrap/Button";
+// import { HiViewList } from "react-icons/hi";
+// import Offcanvas from "react-bootstrap/Offcanvas";
+// import "./HeaderBar.css";
+// const HeaderBar = () => {
+//   const [show, setShow] = useState(false);
+//   const handleShow = () => setShow(!show);
+//   return (
+//     <div className="Navbar">
+//       <div className="row">
+//         <div className="col-md-8">
+//           <img
+//             src="./src/assets/logo.png"
+//             style={{ backgroundColor: "black", padding: "10px" }}
+//             height={65}
+//           />
+//           <Button variant="#0373b5" onClick={handleShow}>
+//             <HiViewList color="white" size={30} />
+//           </Button>
+//           <Offcanvas show={show}>
+//             <Offcanvas.Body>
+//               <div className="list">
+//                 <div className="list-items">
+//                   <div className="list-item p-2">Decision</div>
+
+//                   <div className="list-item p-2">Sent</div>
+
+//                   <div className="list-item p-2">Hold</div>
+
+//                   <div className="list-item p-2">Close/Paid</div>
+
+//                   <div className="list-item p-2">Archives</div>
+
+//                   <div className="list-item p-2">Settings</div>
+
+//                   <div className="list-item p-2">Auto Submit</div>
+
+//                   <div className="list-item p-2">Auto Settings</div>
+
+//                   <div className="list-item p-2">Practice Aging</div>
+
+//                   <div className="list-item p-2">MYTSI Login</div>
+//                 </div>
+//                 <div className="sikka-logo mt-5 ml-3">
+//                  <img src="./src/assets/SikkaAILogo.png" alt="" width={100} style={{marginTop:'25rem'}}/>
+//                 </div>
+//                  </div>
+//             </Offcanvas.Body>
+//           </Offcanvas>
+//           <span className="heading">
+//             <b>Smart</b>Collect
+//           </span>
+//         </div>
+//         <div className="col-md-4 buttons">
+//           <Button className="button">Select Practice</Button>
+//           <Button className="button">Data Refresh</Button>
+//           <Button className="button">User</Button>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default HeaderBar;
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <Col md={8}>
+            <img
+              src="./src/assets/logo.png"
+              style={{ backgroundColor: "black", padding: "10px" }}
+              height={65}
+            />
+            <Button variant="primary" onClick={handleShow}>
+              <BsList size={25} />
+            </Button>
+            <span
+              style={{
+                fontSize: "27px",
+                color: "white",
+                marginLeft: "15px",
+                marginTop: "15px",
+              }}
+            >
+              <b>Smart</b>Collect
+            </span>
+            <Offcanvas show={show}>
+              <Offcanvas.Body>
+                Some text as placeholder. In real life you can have the elements
+                you have chosen. Like, text, images, lists, etc.
+              </Offcanvas.Body>
+            </Offcanvas>
+          </Col>
+          <Col>
+            <NavDropdown
+              title="Dropdown"
+              id="basic-nav-dropdown"
+              style={{
+                color: "white",
+                backgroundColor: "#0373b5",
+                border: "1px solid blue",
+                marginTop: "8px",
+                borderRadius: "7px",
+              }}
+            >
+              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">
+                Another action
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.4">
+                Separated link
+              </NavDropdown.Item>
+            </NavDropdown>
+          </Col>
+          <Col>
+            <NavDropdown
+              title="Dropdown"
+              id="basic-nav-dropdown"
+              style={{
+                color: "white",
+                backgroundColor: "#0373b5",
+                border: "1px solid blue",
+                marginTop: "8px",
+                borderRadius: "7px",
+              }}
+            >
+              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">
+                Another action
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.4">
+                Separated link
+              </NavDropdown.Item>
+            </NavDropdown>
+          </Col>
+          <Col>
+            <NavDropdown
+              title="Dropdown"
+              id="basic-nav-dropdown"
+              style={{
+                color: "white",
+                backgroundColor: "#0373b5",
+                border: "1px solid blue",
+                marginTop: "8px",
+                borderRadius: "7px",
+              }}
+            >
+              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">
+                Another action
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.4">
+                Separated link
+              </NavDropdown.Item>
+            </NavDropdown>
+          </Col>

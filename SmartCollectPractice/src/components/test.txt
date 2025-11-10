@@ -1,0 +1,230 @@
+import React from "react";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import Dropdown from "react-bootstrap/Dropdown";
+import { useState } from "react";
+import Button from "react-bootstrap/Button";
+import { HiViewList } from "react-icons/hi";
+import Offcanvas from "react-bootstrap/Offcanvas";
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import "./HeaderBar.css";
+const HeaderBar = () => {
+  const [show, setShow] = useState(false);
+  const handleShow = () => setShow(!show);
+  return (
+    <div className="header">
+      {/* <Navbar className="Navbar">
+        <div className="row">
+        <div className="col-md-6 header">
+        <img
+          src="./src/assets/logo.png"
+          style={{ backgroundColor: "black", margin: 0, padding: 8 }}
+          height={58}
+          width={120}
+        />
+        <Button variant="#0373b5" onClick={handleShow}>
+          <HiViewList color="white" size={30} />
+        </Button>
+        <Offcanvas show={show}>
+          <Offcanvas.Body>
+            <div className="list col-md-1">
+                <div className="list-items">
+                  <div className="list-item p-2">Decision</div>
+
+                  <div className="list-item p-2">Sent</div>
+
+                  <div className="list-item p-2">Hold</div>
+
+                  <div className="list-item p-2">Close/Paid</div>
+
+                  <div className="list-item p-2">Archives</div>
+
+                  <div className="list-item p-2">Settings</div>
+
+                  <div className="list-item p-2">Auto Submit</div>
+
+                  <div className="list-item p-2">Auto Settings</div>
+
+                  <div className="list-item p-2">Practice Aging</div>
+
+                  <div className="list-item p-2">MYTSI Login</div>
+                </div>
+              </div>
+          </Offcanvas.Body>
+        </Offcanvas>
+        <Navbar.Brand href="#home">
+          <h3 className="heading">
+            <b>Smart</b>Collect
+          </h3>
+        </Navbar.Brand>
+        </div>
+        <div className="col-md-6 header-buttons">
+        <Nav className="me-auto buttons">
+          <Dropdown >
+            <Dropdown.Toggle className="button">Select Practice</Dropdown.Toggle>
+            <Dropdown.Menu>
+              <Dropdown.Item href="#/action-1">Email</Dropdown.Item>
+              <Dropdown.Item href="#/action-2">Change Password</Dropdown.Item>
+              <hr />
+              <Dropdown.Item href="#/action-3" className="text-danger">
+                Logout
+              </Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+          <button href="#home" className="button">
+            Data Refresh
+          </button>
+          <Dropdown>
+            <Dropdown.Toggle className="button">User</Dropdown.Toggle>
+            <Dropdown.Menu>
+              <Dropdown.Item href="#/action-1">Email</Dropdown.Item>
+              <Dropdown.Item href="#/action-2">Change Password</Dropdown.Item>
+              <hr />
+              <Dropdown.Item href="#/action-3" className="text-danger">
+                Logout
+              </Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+        </Nav>
+        </div>
+        </div>
+      </Navbar> */}
+      <Row className="bg-primary">
+        <Col xs={6} md={4}>
+        <img
+          src="./src/assets/logo.png"
+          style={{ backgroundColor: "black", margin: 0, padding: 8 }}
+          height={58}
+          width={120}
+        />
+        <Button variant="#0373b5" onClick={handleShow}>
+          <HiViewList color="white" size={30} />
+        </Button>
+        <Offcanvas show={show}>
+          <Offcanvas.Body>
+            <div className="list col-md-1">
+                <div className="list-items">
+                  <div className="list-item p-2">Decision</div>
+
+                  <div className="list-item p-2">Sent</div>
+
+                  <div className="list-item p-2">Hold</div>
+
+                  <div className="list-item p-2">Close/Paid</div>
+
+                  <div className="list-item p-2">Archives</div>
+
+                  <div className="list-item p-2">Settings</div>
+
+                  <div className="list-item p-2">Auto Submit</div>
+
+                  <div className="list-item p-2">Auto Settings</div>
+
+                  <div className="list-item p-2">Practice Aging</div>
+
+                  <div className="list-item p-2">MYTSI Login</div>
+                </div>
+              </div>
+          </Offcanvas.Body>
+        </Offcanvas>
+        </Col>
+        <Col md={4}>
+                  <h3 className="heading">
+            <b>Smart</b>Collect
+          </h3></Col>
+
+          <Dropdown >
+            <Dropdown.Toggle className="button">Select Practice</Dropdown.Toggle>
+            <Dropdown.Menu>
+              <Dropdown.Item href="#/action-1">Email</Dropdown.Item>
+              <Dropdown.Item href="#/action-2">Change Password</Dropdown.Item>
+              <hr />
+              <Dropdown.Item href="#/action-3" className="text-danger">
+                Logout
+              </Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+        
+          
+          <button href="#home" className="button">
+            Data Refresh
+          </button>
+          <Dropdown>
+            <Dropdown.Toggle className="button">User</Dropdown.Toggle>
+            <Dropdown.Menu>
+              <Dropdown.Item href="#/action-1">Email</Dropdown.Item>
+              <Dropdown.Item href="#/action-2">Change Password</Dropdown.Item>
+              <hr />
+              <Dropdown.Item href="#/action-3" className="text-danger">
+                Logout
+              </Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+         
+      </Row>
+    </div>
+  );
+};
+
+export default HeaderBar;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.Navbar{
+    background-color: #0373b5 !important;
+    padding: 0%;
+    /* justify-content: space-between; */
+}
+.heading{
+    color: white;
+}
+.list{
+    border-right: 0.1rem solid rgb(204, 200, 200);
+}
+.list-items{
+    text-align: center;
+}
+.list-item{
+    border-bottom: 1px solid gray;
+}
+.list-item:hover{
+    background-color: #0373b5;
+    color: white;
+}
+
+.button{
+    margin: 5px;
+    background-color:#0373b5;
+    border-radius: 5px;
+    padding: 5px;
+    color: white;
+    border:1px solid rgb(25, 130, 179);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.button:hover{
+    background-color: white;
+    color: gray;
+}
+.Offcanvas{
+    width: 50px;
+}
