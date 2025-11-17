@@ -14,19 +14,13 @@ import { FaFileAlt } from "react-icons/fa";
 import { MdLogin } from "react-icons/md";
 import "./Sidebar.css";
 
-const Sidebar = ({onMenuSelect }) => {
-  const [show, setShow] = useState(false);
-  const [activeMenu, setActiveMenu] = useState("");
-  const handleShow = () => setShow(!show);
+const Sidebar = ({handleMenuSelect,selectMenu }) => {
+   const [show, setShow] = useState(false);
+   const handleShow = () => setShow(!show);
 
-  const handleMenuClick=(menuName)=>{
-      setActiveMenu(menuName); // update local state
-     if (onMenuSelect) {
-    onMenuSelect(menuName); // send it to parent
-  }
-  }
+
   return (
-    <div className="mt-1">
+    <div className="mt-1 offcanvas">
       <Button variant="#0373b5" onClick={handleShow}>
         <BsList size={30} color="white" />
       </Button>
@@ -39,20 +33,20 @@ const Sidebar = ({onMenuSelect }) => {
                   <FaGaugeHigh />
                   <span
                     className="ml-1"
-                    onClick={() => handleMenuClick("Decision")}
+                    onClick={() => handleMenuSelect("Decision")}
                   >
                     Decision
                   </span>
                 </li>
                 <li className="li">
                   <TbSelect />
-                  <span className="ml-1" onClick={() => handleMenuClick("Sent")}>
+                  <span className="ml-1" onClick={() => handleMenuSelect("Sent")}>
                     Sent
                   </span>
                 </li>
                 <li className="li">
                   <FaHandPaper />
-                  <span className="ml-1" onClick={() => handleMenuClick("Hold")}>
+                  <span className="ml-1" onClick={() => handleMenuSelect("Hold")}>
                     Hold
                   </span>
                 </li>
@@ -60,7 +54,7 @@ const Sidebar = ({onMenuSelect }) => {
                   <IoCloseCircle />
                   <span
                     className="ml-1"
-                    onClick={() => handleMenuClick("Close/Paid")}
+                    onClick={() => handleMenuSelect("Close/Paid")}
                   >
                     Close/Paid
                   </span>
@@ -69,7 +63,7 @@ const Sidebar = ({onMenuSelect }) => {
                   <FaBoxArchive />
                   <span
                     className="ml-1"
-                    onClick={() => handleMenuClick("Archieves")}
+                    onClick={() => handleMenuSelect("Archieves")}
                   >
                     Archieves
                   </span>
@@ -78,7 +72,7 @@ const Sidebar = ({onMenuSelect }) => {
                   <CiSettings />
                   <span
                     className="ml-1"
-                    onClick={() => handleMenuClick("Settings")}
+                    onClick={() => handleMenuSelect("Settings")}
                   >
                     Settings
                   </span>
@@ -87,7 +81,7 @@ const Sidebar = ({onMenuSelect }) => {
                   <FaListCheck />
                   <span
                     className="ml-1"
-                    onClick={() => handleMenuClick("Auto Submit")}
+                    onClick={() => handleMenuSelect("Auto Submit")}
                   >
                     Auto Submit
                   </span>
@@ -96,7 +90,7 @@ const Sidebar = ({onMenuSelect }) => {
                   <FaRegCircle />
                   <span
                     className="ml-1"
-                    onClick={() => handleMenuClick("Auto Settings")}
+                    onClick={() => handleMenuSelect("Auto Settings")}
                   >
                     {" "}
                     Auto Settings
@@ -106,7 +100,7 @@ const Sidebar = ({onMenuSelect }) => {
                   <FaFileAlt />
                   <span
                     className="ml-1"
-                    onClick={() => handleMenuClick("Practice Aging")}
+                    onClick={() => handleMenuSelect("Practice Aging")}
                   >
                     Practice Aging
                   </span>
@@ -115,7 +109,7 @@ const Sidebar = ({onMenuSelect }) => {
                   <MdLogin />
                   <span
                     className="ml-1"
-                    onClick={() => handleMenuClick("MYTSI login")}
+                    onClick={() => handleMenuSelect("MYTSI login")}
                   >
                     MYTSI login
                   </span>

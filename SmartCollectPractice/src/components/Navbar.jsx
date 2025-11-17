@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import Sidebar from "./Sidebar";
-const Navbar = () => {
-  const[activeTab, setActiveTab]= useState("")
+const Navbar = ({handleactivetab,activetab}) => {
+  const[selectMenu, setSelectMenu]= useState("")
 
-    const handleMenuSelect = (menu) => {
+    const handleMenuSelect = useCallback( (menu) => {
+    setSelectMenu(menu);
     console.log("User clicked:", menu);
-    setActiveTab(menu); 
-  };
+  },[selectMenu]);
   return (
     <>
       <div className="container-fluid">
@@ -27,7 +27,7 @@ const Navbar = () => {
               // width={120}
             />
 
-            <Sidebar onMenuSelect={handleMenuSelect}/>
+            <Sidebar handleMenuSelect={handleMenuSelect} selectMenu={selectMenu}/>
 
             <span
               style={{

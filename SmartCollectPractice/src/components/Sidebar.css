@@ -7,5 +7,6 @@
     border-right: 1px solid gray;
 }
 .list li:hover{
-  background-color: aliceblue;
+  color: rgb(136, 176, 211);
+  background-color: rgb(240, 240, 240);
 }
