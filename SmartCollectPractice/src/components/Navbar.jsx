@@ -1,79 +1,96 @@
-import React, { useCallback, useState } from "react";
-import Dropdown from "react-bootstrap/Dropdown";
-import Sidebar from "./Sidebar";
-const Navbar = ({handleactivetab,activetab}) => {
-  const[selectMenu, setSelectMenu]= useState("")
+// import React, { useCallback, useEffect, useState } from "react";
+// import Dropdown from "react-bootstrap/Dropdown";
+// import Sidebar from "./Sidebar";
+// import { BsList } from "react-icons/bs";
+// import Button from "react-bootstrap/Button";
+// const Navbar = ({ handleSelectItem }) => {
+//   const [selectMenu, setSelectMenu] = useState("");
 
-    const handleMenuSelect = useCallback( (menu) => {
-    setSelectMenu(menu);
-    console.log("User clicked:", menu);
-  },[selectMenu]);
-  return (
-    <>
-      <div className="container-fluid">
-        <div className="row" style={{ backgroundColor: "#0373b5" }}>
-          <div className="col-md-8 d-flex">
-            <img
-              src="./src/assets/logo.png"
-              alt=""
-              style={{
-                backgroundColor: "black",
-                paddingRight: "20px",
-                paddingLeft: "20px",
-                paddingTop: "9px",
-                paddingBottom: "7px",
-              }}
-              height={60}
-              // width={120}
-            />
+//   //   const handleMenuSelect = useCallback( (menu) => {
+//   //   setSelectMenu(menu);
+//   //   console.log("User clicked:", menu);
+//   // },[selectMenu]);
 
-            <Sidebar handleMenuSelect={handleMenuSelect} selectMenu={selectMenu}/>
+//   const [show, setShow] = useState(false);
+//   const handleShow = () => setShow(!show);
 
-            <span
-              style={{
-                fontSize: "30px",
-                color: "white",
-              }}
-             // className="m-3"
-            >
-              <b>Smart</b>Collect
-            </span>
-          </div>
-          <div className="col-md-4 mt-2 d-flex justify-content-end">
-            <Dropdown className="mr-1">
-              <Dropdown.Toggle variant="primary">
-                Select Practice
-              </Dropdown.Toggle>
-              <Dropdown.Menu>
-                <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-                <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
-            <Dropdown className="mr-1">
-              <Dropdown.Toggle variant="primary">Data Refresh</Dropdown.Toggle>
-              <Dropdown.Menu>
-                <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-                <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
-            <Dropdown className="mr-1">
-              <Dropdown.Toggle variant="primary">User</Dropdown.Toggle>
-              <Dropdown.Menu>
-                <Dropdown.Item href="#/action-1">Email</Dropdown.Item>
-                <Dropdown.Item href="#/action-2">Change Password</Dropdown.Item>
-                <hr />
-                <Dropdown.Item href="#/action-3" style={{ color: "red" }}>
-                  Log-out
-                </Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
-          </div>
-        </div>
-      </div>
-    </>
-  );
-};
+//   const handleSelectMenu = (menu) => {
+//     handleSelectItem(menu);
+//     setSelectMenu(menu);
+//   };
 
-export default Navbar;
+//   useEffect(() => {
+//     console.log("Updated selectMenu:", selectMenu);
+//   }, [selectMenu]);
+//   return (
+//     <>
+//       <div className="container-fluid">
+//         <div className="row" style={{ backgroundColor: "#0373b5" }}>
+//           <div className="col-md-8 d-flex">
+//             <img
+//               src="./src/assets/logo.png"
+//               alt=""
+//               style={{
+//                 backgroundColor: "black",
+//                 paddingRight: "20px",
+//                 paddingLeft: "20px",
+//                 paddingTop: "9px",
+//                 paddingBottom: "7px",
+//               }}
+//               height={60}
+//               // width={120}
+//             />
+//             <Button variant="#0373b5" onClick={handleShow}>
+//               <BsList size={20} color="white" />
+//             </Button>
+//             {show === true && (
+//               <Sidebar handleSelectMenu={handleSelectMenu} show={show} />
+//             )}
+//             <span
+//               style={{
+//                 fontSize: "30px",
+//                 color: "white",
+//               }}
+//               className="mt-1"
+//             >
+//               <b>Smart</b>Collect
+//             </span>
+//           </div>
+//           <div className="col-md-4 mt-2 d-flex justify-content-end">
+//             <Dropdown className="mr-1">
+//               <Dropdown.Toggle variant="primary">
+//                 Select Practice
+//               </Dropdown.Toggle>
+//               <Dropdown.Menu>
+//                 <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+//                 <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+//                 <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+//               </Dropdown.Menu>
+//             </Dropdown>
+//             <Dropdown className="mr-1">
+//               <Dropdown.Toggle variant="primary">Data Refresh</Dropdown.Toggle>
+//               <Dropdown.Menu>
+//                 <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+//                 <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+//                 <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+//               </Dropdown.Menu>
+//             </Dropdown>
+//             <Dropdown className="mr-1">
+//               <Dropdown.Toggle variant="primary">User</Dropdown.Toggle>
+//               <Dropdown.Menu>
+//                 <Dropdown.Item href="#/action-1">Email</Dropdown.Item>
+//                 <Dropdown.Item href="#/action-2">Change Password</Dropdown.Item>
+//                 <hr />
+//                 <Dropdown.Item href="#/action-3" style={{ color: "red" }}>
+//                   Log-out
+//                 </Dropdown.Item>
+//               </Dropdown.Menu>
+//             </Dropdown>
+//           </div>
+//         </div>
+//       </div>
+//     </>
+//   );
+// };
+
+// export default Navbar;

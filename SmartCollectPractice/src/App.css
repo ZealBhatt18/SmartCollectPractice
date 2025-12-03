@@ -1,0 +1,9 @@
+.body{
+   width: 100%;
+   overflow: auto;
+}
+.body .sidebar{
+    width: 12%;
+    float: left;
+    margin-right: 1%;
+}

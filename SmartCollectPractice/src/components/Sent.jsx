@@ -1,23 +1,25 @@
-import React from "react";
+import React from 'react'
 import Nav from "react-bootstrap/Nav";
-const Decision = () => {
+const Sent = () => {
   return (
-    <div className="mt-4">
+    <div>
+        <div className="mt-4">
       <Nav variant="tabs"
         defaultActiveKey="link-1"
         onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
       >
         <Nav.Item>
           <Nav.Link eventKey="link-1">
-            Submit New Accounts for Accelerator
+             Accounts Submitted
           </Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link eventKey="link-2">Report Payments</Nav.Link>
+          <Nav.Link eventKey="link-2"> Payments / Stops Submitted</Nav.Link>
         </Nav.Item>
       </Nav>
     </div>
-  );
-};
+    </div>
+  )
+}
 
-export default Decision;
+export default Sent

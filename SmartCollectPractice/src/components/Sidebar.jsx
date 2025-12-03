@@ -1,132 +1,119 @@
 import React, { useState } from "react";
-import Offcanvas from "react-bootstrap/Offcanvas";
-import { BsList } from "react-icons/bs";
-import Button from "react-bootstrap/Button";
-import { FaGaugeHigh } from "react-icons/fa6";
-import { TbSelect } from "react-icons/tb";
-import { FaHandPaper } from "react-icons/fa";
-import { IoCloseCircle } from "react-icons/io5";
-import { FaBoxArchive } from "react-icons/fa6";
-import { CiSettings } from "react-icons/ci";
-import { FaListCheck } from "react-icons/fa6";
-import { FaRegCircle } from "react-icons/fa";
-import { FaFileAlt } from "react-icons/fa";
-import { MdLogin } from "react-icons/md";
 import "./Sidebar.css";
+import { ImCheckboxChecked } from "react-icons/im";
+import { FaGaugeHigh } from "react-icons/fa6";
+import { FaHandPaper } from "react-icons/fa";
+import { FaCircleXmark } from "react-icons/fa6";
+import { FaArchive } from "react-icons/fa";
+import { IoSettingsSharp } from "react-icons/io5";
+import { FaListCheck } from "react-icons/fa6";
+import { FaCogs } from "react-icons/fa";
+import { RiFileTextFill } from "react-icons/ri";
+import { RiLogoutBoxRLine } from "react-icons/ri";
 
-const Sidebar = ({handleMenuSelect,selectMenu }) => {
-   const [show, setShow] = useState(false);
-   const handleShow = () => setShow(!show);
-
-
+const Sidebar = ({ setSelectedMenu }) => {
+  const [isSelected, setIsSelected] = useState(false);
+  const handleSelectedMenu = (menu) => {
+    setSelectedMenu(menu);
+    setIsSelected(!isSelected);
+    console.log(menu);
+  };
   return (
-    <div className="mt-1 offcanvas">
-      <Button variant="#0373b5" onClick={handleShow}>
-        <BsList size={30} color="white" />
-      </Button>
-      <Offcanvas show={show}>
-        <Offcanvas.Body>
-          <div className="list">
-            <div className="list-items">
-              <ul className="list-unstyled">
-                <li className="li">
-                  <FaGaugeHigh />
-                  <span
-                    className="ml-1"
-                    onClick={() => handleMenuSelect("Decision")}
-                  >
-                    Decision
-                  </span>
-                </li>
-                <li className="li">
-                  <TbSelect />
-                  <span className="ml-1" onClick={() => handleMenuSelect("Sent")}>
-                    Sent
-                  </span>
-                </li>
-                <li className="li">
-                  <FaHandPaper />
-                  <span className="ml-1" onClick={() => handleMenuSelect("Hold")}>
-                    Hold
-                  </span>
-                </li>
-                <li className="li">
-                  <IoCloseCircle />
-                  <span
-                    className="ml-1"
-                    onClick={() => handleMenuSelect("Close/Paid")}
-                  >
-                    Close/Paid
-                  </span>
-                </li>
-                <li className="li">
-                  <FaBoxArchive />
-                  <span
-                    className="ml-1"
-                    onClick={() => handleMenuSelect("Archieves")}
-                  >
-                    Archieves
-                  </span>
-                </li>
-                <li className="li">
-                  <CiSettings />
-                  <span
-                    className="ml-1"
-                    onClick={() => handleMenuSelect("Settings")}
-                  >
-                    Settings
-                  </span>
-                </li>
-                <li className="li">
-                  <FaListCheck />
-                  <span
-                    className="ml-1"
-                    onClick={() => handleMenuSelect("Auto Submit")}
-                  >
-                    Auto Submit
-                  </span>
-                </li>
-                <li className="li">
-                  <FaRegCircle />
-                  <span
-                    className="ml-1"
-                    onClick={() => handleMenuSelect("Auto Settings")}
-                  >
-                    {" "}
-                    Auto Settings
-                  </span>
-                </li>
-                <li className="li">
-                  <FaFileAlt />
-                  <span
-                    className="ml-1"
-                    onClick={() => handleMenuSelect("Practice Aging")}
-                  >
-                    Practice Aging
-                  </span>
-                </li>
-                <li className="li">
-                  <MdLogin />
-                  <span
-                    className="ml-1"
-                    onClick={() => handleMenuSelect("MYTSI login")}
-                  >
-                    MYTSI login
-                  </span>
-                </li>
-              </ul>
-            </div>
-            <div className="sikka-logo text-center">
-              <img
-                src="./src/assets/SikkaAILogo.png"
-                alt=""
-                width={100}
-                style={{ marginTop: "25rem" }}
-              />
-            </div>
-          </div>
-        </Offcanvas.Body>
-      </Offcanvas>
+    <div>
+      <div className="sidebar-list">
+        <div className="list pb-5">
+          <ul className="pb-5">
+            {isSelected === false ? (
+              <li
+                className="li-item p-2"
+                onClick={() => handleSelectedMenu("Decision")}
+              >
+                <FaGaugeHigh className="mr-2" />
+                Decison
+              </li>
+            ) : (
+              <li
+                className="li-item p-2"
+                onClick={() => handleSelectedMenu("Decision")}
+                style={{ backgroundColor: "#007bff", color: "white" }}
+              >
+                <FaGaugeHigh className="mr-2" />
+                Decison
+              </li>
+            )}
+            <li
+              className="li-item p-2"
+              onClick={() => handleSelectedMenu("Sent")}
+            >
+              <ImCheckboxChecked className="mr-2" />
+              Sent
+            </li>
+            <li
+              className="li-item p-2"
+              onClick={() => handleSelectedMenu("Hold")}
+            >
+              <FaHandPaper className="mr-2" />
+              Hold
+            </li>
+            <li
+              className="li-item p-2"
+              onClick={() => handleSelectedMenu("Closed/Paid")}
+            >
+              <FaCircleXmark className="mr-2" />
+              Closed/Paid
+            </li>
+            <li
+              className="li-item p-2"
+              onClick={() => handleSelectedMenu("Archieves")}
+            >
+              <FaArchive className="mr-2" />
+              Archieves
+            </li>
+            <li
+              className="li-item p-2"
+              onClick={() => handleSelectedMenu("Settings")}
+            >
+              <IoSettingsSharp className="mr-2" />
+              Settings
+            </li>
+            <li
+              className="li-item p-2"
+              onClick={() => handleSelectedMenu("Auto Submit")}
+            >
+              <FaListCheck className="mr-2" />
+              Auto Submit
+            </li>
+            <li
+              className="li-item p-2"
+              onClick={() => handleSelectedMenu("Auto Settings")}
+            >
+              <FaCogs className="mr-2" />
+              Auto Settings
+            </li>
+            <li
+              className="li-item p-2"
+              onClick={() => handleSelectedMenu("Practice Aging")}
+            >
+              <RiFileTextFill className="mr-2" />
+              Practice Aging
+            </li>
+            <li
+              className="li-item p-2 mb-5"
+              onClick={() => handleSelectedMenu("MYTSI login")}
+            >
+              <RiLogoutBoxRLine className="mr-2" />
+              MYTSI login
+            </li>
+          </ul>
+        </div>
+        <div className="logo-img mt-5 pt-5">
+          <img
+            src="./src/assets/SikkaAILogo.png"
+            width={"150px"}
+            className="mt-5 pt-5"
+          />
+        </div>
+      </div>
     </div>
   );
 };

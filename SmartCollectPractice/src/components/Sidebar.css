@@ -1,12 +1,21 @@
-.li{
-    border-bottom: 1px solid gray;
-    padding: 10.2px;
+.sidebar-list{
+  border: 1px solid rgb(221, 219, 219);
 }
-.list{
-    width: 165px;
-    border-right: 1px solid gray;
+ul{
+  padding: 0;
+  margin: 0;
 }
-.list li:hover{
-  color: rgb(136, 176, 211);
-  background-color: rgb(240, 240, 240);
+
+.li-item{
+  text-align: start;
+  border-bottom: 1px solid rgb(221, 219, 219);
+  list-style-type: none;
 }
+
+.li-item:hover{
+  background-color: rgb(247, 245, 245);
+  cursor: pointer;
+  color:#007bff;
+}
+
+
