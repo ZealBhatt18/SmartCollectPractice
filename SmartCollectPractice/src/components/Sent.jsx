@@ -1,24 +1,25 @@
 import React from 'react'
 import Nav from "react-bootstrap/Nav";
+import Tab from 'react-bootstrap/Tab';
+import Tabs from 'react-bootstrap/Tabs';
+import CommonTable from './CommonTable';
 const Sent = () => {
   return (
-    <div>
-        <div className="mt-4">
-      <Nav variant="tabs"
-        defaultActiveKey="link-1"
-        onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
-      >
-        <Nav.Item>
-          <Nav.Link eventKey="link-1">
-             Accounts Submitted
-          </Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link eventKey="link-2"> Payments / Stops Submitted</Nav.Link>
-        </Nav.Item>
-      </Nav>
+      <div className="sent mt-4">
+    <Tabs
+      defaultActiveKey="Accounts Submitted"
+      id="uncontrolled-tab-example"
+      className="mb-3"
+    >
+      <Tab eventKey="home" title="Accounts Submitted">
+       <CommonTable />
+      </Tab>
+      <Tab eventKey="profile" title="Payments / Stop Submitted">
+        dutk
+      </Tab>
+    </Tabs>
     </div>
-    </div>
+ 
   )
 }
 

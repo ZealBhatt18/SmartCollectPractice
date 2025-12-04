@@ -9,10 +9,11 @@ import Sidebar from "./components/Sidebar";
 import Settings from "./components/Settings";
 import Sent from "./components/Sent";
 import Hold from "./components/Hold";
+//import NewSideBar from "./components/NewSideBar";
 
 function App() {
-  const [sidebaron, setSidebaron] = useState(false);
-    const[selectedMenu,setSelectedMenu]=useState("")
+  const [sidebaron, setSidebaron] = useState(true);
+  const [selectedMenu, setSelectedMenu] = useState("Decision");
 
   useEffect(() => {
     console.log(sidebaron);
@@ -37,25 +38,38 @@ function App() {
   //   getResult();
   // }, []);
 
-  
-
   // useEffect(()=>{
   //  console.log(selectedMenu);
   // },[selectedMenu])
   return (
     <>
       <div>
-        {/* <Navbar handleSelectItem={handleSelectItem}/> */}
-        <Navcomponent setSidebaron={setSidebaron} />
+        <div className="header">
+          {/* <Navbar handleSelectItem={handleSelectItem}/> */}
+          <Navcomponent setSidebaron={setSidebaron} />
+        </div>
         <div className="body">
           <div className="sidebar">
-            {sidebaron === true && <Sidebar setSelectedMenu={setSelectedMenu}/>}
+            {sidebaron === true && (
+              <Sidebar setSelectedMenu={setSelectedMenu} />
+            )}
           </div>
-          <div className="main-content">
-            {selectedMenu==="Decision"&& <Decision />}
-            {selectedMenu==="Sent" && <Sent/>}
-            {selectedMenu==="Hold" && <Hold/>}
-            {selectedMenu==="Settings" && <Settings/>}
+          <div className="main">
+            <div className="main-content mb-5">
+            {selectedMenu === "Decision" && <Decision />}
+            {selectedMenu === "Sent" && <Sent />}
+            {selectedMenu === "Hold" && <Hold />}
+            {selectedMenu === "Settings" && <Settings />}
+            </div>
+            <div className="footer p-2 mt-5 bg-white">
+              <span style={{ color: "#007bff" }}>
+                Privacy Policy |HIPPA | EULA | Contact | Support
+              </span>
+              <p>
+                Copyright © 2025 Sikka Software Corporation. All Rights
+                Reserved.
+              </p>
+            </div>
           </div>
         </div>
       </div>

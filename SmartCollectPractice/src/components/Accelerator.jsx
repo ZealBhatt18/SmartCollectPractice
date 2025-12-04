@@ -69,11 +69,6 @@ export const Accelerator = () => {
             className="form-check-input me-2"
             id="include-all-charges"
             defaultChecked="true"
-            style={{
-              width: "1.3em",
-              height: "1.3em",
-              border: "1px solid gray",
-            }}
           />
           <b>Include All Charges If At Least One Charge Is Past Due</b>
           <b className="bg-gray  dot">i</b>

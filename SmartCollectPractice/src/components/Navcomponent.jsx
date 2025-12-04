@@ -4,7 +4,7 @@ import { BsList } from "react-icons/bs";
 import Dropdown from "react-bootstrap/Dropdown";
 
 const Navcomponent = ({setSidebaron}) => {
-      const [show, setShow] = useState(false);
+      const [show, setShow] = useState(true);
       const handleShow = () =>{ 
         setShow(!show)
         // handlesidebar(show)

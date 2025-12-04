@@ -2,12 +2,15 @@ import { useEffect, useState } from "react";
 import { Accelerator } from "./Accelerator";
 import ProfitRecovery from "./ProfitRecovery";
 import Collections from "./Collections";
-
+import './Settings.css'
 const Settings = () => {
+    const tabFN = (tabName) => {
+    setSelectSettings(tabName);
+  };
   const [selectSettings, setSelectSettings] = useState("Accelerator");
   return (
     <>
-      <div className="col-md-12">
+      {/* <div className="col-md-12">
         <div className="box box-primary">
           <div className="box-header">
             <h6>TSI Service Setup</h6>
@@ -116,7 +119,7 @@ const Settings = () => {
             </h6>
           </div>
           <div className="box-body">
-            {/* <ClientDetails activeMenu={activeMenu} /> */}
+            {/* <ClientDetails activeMenu={activeMenu} /> 
           </div>
         </div>
       </div>
@@ -134,7 +137,7 @@ const Settings = () => {
         >
           Save
         </button>
-      </div>
+      </div> */}
     </>
   );
 };

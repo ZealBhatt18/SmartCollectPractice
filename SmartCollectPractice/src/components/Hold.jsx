@@ -1,21 +1,22 @@
+import { Tab } from 'bootstrap';
 import React from 'react'
-import Nav from "react-bootstrap/Nav";
+import Tabs from 'react-bootstrap/esm/Tabs';
+
 const Hold = () => {
   return (
     <div className="mt-4">
-      <Nav variant="tabs"
-        defaultActiveKey="link-1"
-        onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
-      >
-        <Nav.Item>
-          <Nav.Link eventKey="link-1">
-            Accounts on Hold
-          </Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link eventKey="link-2">Report Payments on Hold</Nav.Link>
-        </Nav.Item>
-      </Nav>
+    <Tabs
+      defaultActiveKey="Accounts on Hold"
+      id="uncontrolled-tab-example"
+      className="mb-3"
+    >
+      <Tab eventKey="home" title="Accounts on Hold">
+        kur
+      </Tab>
+      <Tab eventKey="profile" title="Report Payments on Hold">
+        dutk
+      </Tab>
+    </Tabs>
     </div>
   )
 }

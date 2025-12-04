@@ -1,9 +1,19 @@
 .body{
-   width: 100%;
+   /* width: 100%; */
    overflow: auto;
+   display:flex;
+   
 }
-.body .sidebar{
+.sidebar{
     width: 12%;
     float: left;
-    margin-right: 1%;
 }
+.main{
+    width: 88%;
+    background-color: rgb(250, 249, 249);
+}
+.footer{
+    position:absolute;
+    bottom: 0;
+    width: 88%;
+} 
