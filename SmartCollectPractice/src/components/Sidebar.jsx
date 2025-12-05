@@ -211,7 +211,7 @@ const Sidebar = ({ setSelectedMenu }) => {
         <img
           src="./src/assets/SikkaAILogo.png"
           width={"200px"}
-          className="mt-5 pt-5 pl-3"
+          className="mt-5 pt-5 p-1"
         />
       </div>
       </div>

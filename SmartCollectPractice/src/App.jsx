@@ -43,34 +43,33 @@ function App() {
   // },[selectedMenu])
   return (
     <>
-      <div>
+      <div className="">
         <div className="header">
           {/* <Navbar handleSelectItem={handleSelectItem}/> */}
           <Navcomponent setSidebaron={setSidebaron} />
         </div>
-        <div className="body">
+        <div className="body-content">
           <div className="sidebar">
             {sidebaron === true && (
               <Sidebar setSelectedMenu={setSelectedMenu} />
             )}
           </div>
-          <div className="main">
-            <div className="main-content mb-5">
+    <div className="main" style={{width: sidebaron===true?"90%":"100%"}}>
+          <div className="main-content mb-5">
             {selectedMenu === "Decision" && <Decision />}
             {selectedMenu === "Sent" && <Sent />}
             {selectedMenu === "Hold" && <Hold />}
             {selectedMenu === "Settings" && <Settings />}
-            </div>
-            <div className="footer p-2 mt-5 bg-white">
-              <span style={{ color: "#007bff" }}>
-                Privacy Policy |HIPPA | EULA | Contact | Support
-              </span>
-              <p>
-                Copyright © 2025 Sikka Software Corporation. All Rights
-                Reserved.
-              </p>
-            </div>
           </div>
+          <div className="footer p-2 mt-5 bg-white">
+            <span style={{ color: "#007bff" }}>
+              Privacy Policy |HIPPA | EULA | Contact | Support
+            </span>
+            <p>
+              Copyright © 2025 Sikka Software Corporation. All Rights Reserved.
+            </p>
+          </div>
+            </div>
         </div>
       </div>
     </>

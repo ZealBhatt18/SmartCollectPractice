@@ -1,19 +1,46 @@
-.body{
-   /* width: 100%; */
-   overflow: auto;
-   display:flex;
-   
+*{
+    box-sizing: border-box;
 }
-.sidebar{
+.body-content{
+    width: 100%; 
+   display:flex; 
+}
+/* .sidebar{
     width: 12%;
     float: left;
-}
+} */
 .main{
-    width: 88%;
+    flex: 1;
     background-color: rgb(250, 249, 249);
 }
-.footer{
-    position:absolute;
-    bottom: 0;
-    width: 88%;
-} 
+.footer {
+  width: 100%;
+  position: relative;
+}
+
+/* -------- RESPONSIVE BREAKPOINTS -------- */
+@media (max-width: 992px) {
+  .sidebar {
+    width: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .body-content {
+    flex-direction: column;  /* stack sidebar above main */
+  }
+
+  .sidebar {
+    width: 100%; /* full width on mobile */
+  }
+
+  .main {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    display: none;   /* hide sidebar on very small screens */
+  }
+}
